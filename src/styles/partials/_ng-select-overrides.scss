@@ -1,0 +1,199 @@
+@import "../modules/colors";
+
+ng-select:not(.ng-select-single) {
+
+  div.ng-select-div {
+    background-color: $blue2;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: none !important;
+  }
+
+  span.ng-select-label {
+    background-color: $blue2;
+    color: $white;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    outline-width: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: right;
+    font-style: normal;
+    margin-left: 7px;
+    height: 21px;
+  }
+
+  span.ng-select-icon {
+    background-color: $blue2;
+    color: $white;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    outline-width: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: right;
+    font-style: normal;
+    font-weight: 400;
+    height: 21px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  div.ng-value {
+    border: none !important;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+  }
+
+  div.ng-option {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+  }
+
+  div.ng-select-container {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    width: 100%;
+    box-shadow: none !important;
+  }
+
+  .ng-placeholder {
+    margin-top: 5px !important;
+  }
+
+  width: 100%;
+  box-shadow: none !important;
+}
+
+ng-select {
+  .ng-select-container {
+    min-height: 40px !important;
+
+    input {
+      color: transparent !important; //this will avoid unwanted cursor
+    }
+  }
+
+  .ng-select-container span.ng-arrow-wrapper {
+    mask-image: 2px solid $blue-primary;
+    mask-size: contain;
+    -webkit-mask-image: 2px solid $blue-primary;
+    -webkit-mask-size: contain;
+
+    width: 8px !important;
+    height: 8px !important;
+    transform: rotate(45deg) !important;
+    border: 2px solid $blue-primary !important;
+    border-width: 0 2px 2px 0 !important;
+    margin-right: 10px !important;
+    top: -2px !important;
+  }
+
+  span.ng-arrow {
+    top: -5px !important;
+    width: 15px !important;
+    height: 15px !important;
+    transform: rotate(45deg) !important;
+    border-width: 0 2px 2px 0 !important;
+    margin-right: 6px !important;
+    opacity: 0.0 !important;
+    filter: alpha(opacity=50) !important;
+  }
+
+  div.ng-option {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+  }
+
+  div.ng-option-label {
+    font-family: 'Roboto' !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 13px !important;
+  }
+
+
+
+  div.ng-value {
+    border: none !important;
+    -webkit-border-radius: 5px 5px 5px 5px !important;
+    border-radius: 5px 5px 5px 5px !important;
+    font-family: 'Roboto' !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 13px !important;
+  }
+
+  div.ng-input.input {
+    border: none !important;
+    -webkit-border-radius: 5px 5px 5px 5px !important;
+    border-radius: 5px 5px 5px 5px !important;
+    font-family: 'Roboto' !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 13px !important;
+
+  }
+
+
+
+  font-size: 13px !important;
+}
+
+ng-select.select-min {
+  width: 180px !important;
+}
+
+ng-select.select-med {
+  width: 300px !important;
+}
+
+ng-select.select-max {
+  width: 450px !important;
+}
+
+//disabled mode
+ng-select.disabled {
+  &:after {
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    cursor: not-allowed;
+    z-index: 9;
+  }
+}
+
+ng-select.disabled .ng-select-container {
+  background-color: $soft-gray !important;
+
+  div.ng-select-div,
+  span.ng-select-label,
+  span.ng-select-icon {
+    background-color: $gray-background-light;
+  }
+}
+
+ng-select.disabled .ng-value span {
+  color: $standard-gray !important;
+}

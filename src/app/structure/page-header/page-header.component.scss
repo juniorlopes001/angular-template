@@ -1,0 +1,30 @@
+.page-header {
+  padding: 25px 15px 0 15px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #172b4d;
+    flex-grow: 0;
+    display: flex;
+  }
+  button.btn.btn-primary {
+    margin: 0;
+  }
+}
+
+.btn {
+  position: relative;
+  top: 5px;
+}
+
+.btnTitle {
+  min-width: 170px;
+}
+
+i {
+  margin-right: 6px;
+}

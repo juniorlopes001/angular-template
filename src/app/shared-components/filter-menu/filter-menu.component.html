@@ -1,0 +1,10 @@
+<div class="menu-overlay" [ngClass]="{'active': isMenuActive}" (click)="closeFilter()"></div>
+<div class="filter-menu" [ngClass]="{'active': isMenuActive}" [class.filter-menu-big]="isBigMenu">
+
+    <div class="filter-header">
+        <h1 class="title">Filters</h1>
+        <i class="material-icons close" (click)="closeFilter()">close</i>
+    </div>
+
+    <ng-content></ng-content>
+</div>

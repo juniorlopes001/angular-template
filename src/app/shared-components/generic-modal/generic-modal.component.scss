@@ -1,0 +1,10 @@
+@import "../../../styles/modules/_colors";
+
+
+.modal-dialog.small {
+  max-width: 690px;
+}
+
+.modal-body{
+  background-color: $soft-blue2;
+}

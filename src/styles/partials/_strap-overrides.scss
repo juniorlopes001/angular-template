@@ -1,0 +1,76 @@
+@import "../modules/_colors";
+
+body {
+  background-color: $background;
+}
+
+.form-group input[type="radio"]+label {
+  margin: 0;
+}
+
+.radio-option-container {
+  label {
+    font-size: 14px;
+  }
+}
+
+.form-check.form-check-inline {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0;
+  margin-left: 0 !important;
+}
+
+//modal
+div.modal {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: $transparent-background;
+  z-index: 9999;
+  transition: opacity .3s ease;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto !important;
+  cursor: pointer;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+  }
+
+  button.close {
+    outline: none;
+  }
+}
+
+.search-container {
+  width: 60%;
+}
+
+.show-container {
+  width: 40%;
+}
+
+div.modal-dialog {
+  width: 100%;
+  max-width: 1170px;
+  cursor: default;
+}
+
+div.modal-body {
+  padding: 0;
+}
+
+div.modal-header {
+  border-bottom: 1px solid $exotic-gray !important;
+
+  h5 {
+    font-size: 16px;
+    color: $gray-labels;
+  }
+}

@@ -1,0 +1,67 @@
+app-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-header,
+app-footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+app-header {
+  height: 100%;
+  position: fixed;
+  height: $header-height;
+  z-index: 9997;
+}
+
+router-outlet {
+  display: none;
+}
+
+custom-fields {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+analysis-tag-list,
+analysis-improvement-project-selected {
+  width: 100%;
+}
+
+analysis-tag-list {
+  margin-right: 15px;
+}
+
+analysis-improvement-project-selected {
+  margin-left: 15px;
+}
+
+list-selector {
+  width: 100%;
+}
+
+blank-loader {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+relate-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

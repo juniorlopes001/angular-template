@@ -1,0 +1,15 @@
+<div class="modal" tabindex="-1" role="dialog" [class.visible]="isGenericModalShowing">
+  <div class="modal-dialog" role="document" (click)="dontCloseModal($event)" [class.small]="!isLarge">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{modalTitle}}</h5>
+        <button type="button" class="close" (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

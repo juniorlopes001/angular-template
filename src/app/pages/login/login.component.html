@@ -1,0 +1,43 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form-title logo-login" style="background-image: url(../assets/images/logo.png); background-size: 90%;">
+            </div>
+            <div class="page-content-container">
+                <div class="container" style="margin: 0 auto;">
+                    <form [formGroup]="formLogin">
+                        <div class="form-login">
+                            <div class="row new-row">
+                                <div class="input-text">
+                                    <label [class.required]="formLogin.controls.email.invalid && sendForm"
+                                        for="">E-mail</label>
+                                    <input [class.has-error-input]="formLogin.controls.email.invalid && sendForm"
+                                        placeholder="Enter your email" type="text" class="form-control input-text"
+                                        formControlName="email">
+                                </div>
+                            </div>
+                            <div class="row new-row">
+                                <div class="input-text">
+                                    <label [class.required]="formLogin.controls.password.invalid && sendForm"
+                                        for="">Senha</label>
+                                    <input [class.has-error-input]="formLogin.controls.password.invalid && sendForm"
+                                        placeholder="Enter your password" type="password"
+                                        class="form-control input-text" formControlName="password">
+                                </div>
+                            </div>
+                            <div class="row new-row">
+                                <div class="btn-save-div">
+                                    <button [disabled]="!isValid()" (click)="login()" style="height: 40px;"
+                                        class="btn btn-success buttons btn-login">
+                                        <span *ngIf="!loading">Entrar</span>
+                                        <app-circle-loader *ngIf="loading"></app-circle-loader>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

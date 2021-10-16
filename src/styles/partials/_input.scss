@@ -1,0 +1,252 @@
+@import "../modules/_colors";
+
+//main colors
+.form-group input:not([type="checkbox"]):not([type="range"]):not([type="radio"]),
+.form-group select,
+.form-group textarea,
+.selectize-input {
+  font-size: 13px;
+  width: 100%;
+  line-height: 1.42857143;
+  color: $gray;
+  border: 1px solid $medium-gray;
+  background-color: $white;
+  min-height: 34px;
+  padding: 6px 12px;
+  background-image: none;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-group.has-error input:not([type="checkbox"]):not([type="range"]),
+.form-group.has-error select,
+.form-group.has-error .ng-select-container,
+.form-group.has-error textarea,
+.form-group.has-error .selectize-input {
+  border: 1px solid $red;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-group.has-error label {
+  color: $red;
+}
+
+//focus
+.form-group input:not([type="checkbox"]):not([type="range"]):not([type="radio"]):focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.selectize-input.focus:not(input) {
+  border-color: $hint-gray;
+  box-shadow: 0 1px 1px rgba(21, 11, 167, 0.164) inset, 0 0 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.ng-input input:focus {
+  border-color: $hint-gray;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.form-group.has-error input:not([type="checkbox"]):not([type="range"]):focus,
+.form-group.has-error select:focus,
+.form-group.has-error textarea:focus,
+.form-group.has-error .selectize-input.focus:not(input) {
+  border: 1px solid $red;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 7px $red;
+}
+
+//themes override
+div.selectize-input {
+  cursor: pointer;
+
+  div.item {
+    background-color: $blue !important;
+    color: $white !important;
+
+    &.active {
+      background-color: $blue !important;
+      color: $white !important;
+    }
+  }
+}
+
+
+
+//position and dimensions
+.form-group {
+  input.form-control {
+    min-height: 40px !important;
+  }
+}
+
+div.selectize-input {
+  margin: 0 !important;
+}
+
+
+.form-group.single-select {
+  ng-selectize {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  //removes flashing cursor
+  input {
+    color: black !important;
+  }
+
+  div.selectize-input {
+    padding-top: 11px !important;
+    max-height: 40px !important;
+    height: 40px !important;
+
+    div.item {
+      background-color: transparent !important;
+      color: $gray !important;
+      display: block;
+      width: calc(100% - 18px) !important;
+      max-width: 190px;
+      height: 25px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      white-space: nowrap !important;
+      overflow: hidden;
+    }
+  }
+}
+
+//placeholders
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  opacity: 1;
+  color: $gray-light-text;
+  font-size: 13px;
+}
+
+//other stylings
+.form-group input[type="text"]:disabled,
+.form-group textarea:disabled {
+  background-color: $soft-gray !important;
+  color: $standard-gray !important;
+  cursor: not-allowed;
+}
+
+//custom checkboxes
+.nice-checkbox {
+  input[type=checkbox] {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid $light-blue;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 9px;
+  }
+
+  input[type=checkbox]:checked+label:before {
+    opacity: 1;
+  }
+
+  input[type=checkbox]:checked {
+    background: $blue;
+    border: 1px solid $blue;
+
+    &:disabled {
+      background: $gray-disabled;
+      border: 1px solid $gray-disabled;
+    }
+  }
+
+  label:before {
+    content: '';
+    border: 3px solid $white;
+    opacity: 0;
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    top: 11px;
+    left: 12px;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+  }
+
+  label:after {
+    //click region
+    content: '';
+    transform: rotate(0);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    top: 3px;
+    left: 6px;
+  }
+}
+
+@-moz-document url-prefix() {
+  .nice-checkbox {
+    input[type=checkbox]:checked+label:before {
+      opacity: 0;
+    }
+  }
+}
+
+//----------- ng-select ------------
+
+//general
+.ng-select {
+  width: 240px;
+  max-width: 100%;
+
+  .ng-select-container,
+  input[type=text] {
+    cursor: pointer !important;
+    color: black !important;
+  }
+
+  .ng-clear-wrapper {
+    display: none !important; //removes the "x" of all ng-select
+  }
+
+  .ng-select-container {
+    border: 1px solid $medium-gray;
+  }
+
+  &:focus-within .ng-select-container {
+    border-color: $hint-gray !important;
+    //  box-shadow: 0 1px 1px rgba(21, 11, 167, 0.164) inset, 0 0 5px rgba(0, 0, 0, 0.5) !important;
+    outline: none !important;
+  }
+}
+
+.form-group.has-error {
+  .ng-select-container:focus-within {
+    border: 1px solid $red !important;
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 7px $red !important;
+  }
+}
+
+//visual bug
+.form-group .ng-input input {
+  min-height: 0 !important;
+  padding: 0 !important;
+
+}
+
+//has error internal shadow bug
+.form-group.has-error .ng-select-container input {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+

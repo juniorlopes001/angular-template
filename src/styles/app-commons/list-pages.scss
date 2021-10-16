@@ -1,0 +1,57 @@
+@import "../modules/_colors";
+//main
+.page-body {
+    display: flex;
+    margin: 40px 0;
+    background-color: $white;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.page-options-container {
+    width: 100%;
+    display: flex;
+    background-color: #e8e9f1a1;
+    padding: 20px 15px 20px 25px;
+}
+
+.filter-button-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    .filter-icon {
+        top: -1px;
+        width: 15px;
+        height: 15px;
+        position: relative;
+        margin-right: 10px;
+    }
+    .filter-button {
+        position: relative;
+    }
+    .filter-applied {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $orange;
+        position: absolute;
+        left: 30px;
+        top: 9px;
+    }
+}
+
+.filter-button {
+    border-top: none;
+    border-left: none;
+    width: 105px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,7 @@
+<div class="page-header container">
+    <h1 id="titlePage" class="no-selected">{{title}} {{headerTitle}}</h1>
+    <button *ngIf="buttonVisible && buttonUrl" class="btn btn-success" routerLink="{{buttonUrl}}">
+    <i *ngIf="icon" class="material-icons">cloud_download</i>{{buttonTitle}}</button>
+</div>
+<div class="breadcrumb-container container">
+</div>

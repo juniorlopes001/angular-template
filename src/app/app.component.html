@@ -1,0 +1,15 @@
+<default-message></default-message>
+<div id="overlay">
+</div>
+<header *ngIf="showHeader">
+  <app-side-menu></app-side-menu>
+  <app-header></app-header>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer *ngIf="showFooter">
+  <app-footer></app-footer>
+</footer>

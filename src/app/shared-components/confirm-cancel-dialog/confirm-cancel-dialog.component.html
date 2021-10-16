@@ -1,0 +1,10 @@
+<div class="dialog-container">
+  <h1>{{dialogText}}</h1>
+  <div *ngIf="usingObs">
+    <p style="margin-top: -20px;margin-bottom: 25px;">{{atentionText}}</p>
+  </div>
+  <div class="buttons-container">
+    <button class="btn btn-success" (click)="confirm()">Confirmar</button>
+    <button class="btn btn-white-hover" (click)="cancel()">Cancelar</button>
+  </div>
+</div>

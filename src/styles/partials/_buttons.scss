@@ -1,0 +1,176 @@
+@import "../modules/_colors";
+@import "../modules/_mixins.scss";
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+//bootstrap .btn override
+.btn {
+  font-size: 14px;
+  // width: 100%;
+  // max-width: 170px;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  padding: 8px 15px; // &:focus {
+  // box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.20);
+  // }
+  @include mq("desktop-wide", "min") {
+    // max-width: 240px;
+  }
+}
+
+@mixin colorize($bg-color, $text-color, $border-color, $text-color-hover) {
+  background-color: $bg-color;
+  color: $text-color !important; //overrides bootstrap inherit colors for <a>
+  // border-color: $border-color;
+
+  &:hover {
+    background-color: darken($bg-color, 4%);
+    // border-color: darken($border-color, 4%);
+    color: $text-color-hover !important;
+  }
+}
+
+.btn-primary {
+  @include colorize($blue-primary, $white, $blue-primary, $white);
+}
+
+.btn-transparent {
+  @include colorize(transparent, $white, $white, $white);
+
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+.btn-transparent-with-icon {
+  @include colorize(transparent, $blue-input, transparent, $blue-input);
+  padding: 10px;
+  box-shadow: none;
+
+  i {
+    color: $blue-primary;
+    margin-right: 5px;
+  }
+
+  // &:hover {
+  //   background-color: $blue;
+  // }
+}
+
+.btn-white-hover {
+  @include colorize($white, $blue, $soft-blue, $blue);
+
+  &:hover {
+    background-color: lighten($blue-input, 70%);
+  }
+}
+
+.btn-white-hover-2 {
+  @include colorize($white, $blue, $medium-gray, $blue);
+
+  &:hover {
+    background-color: lighten($blue-input, 70%);
+  }
+}
+
+.edit-button {
+  border-radius: 4px;
+  height: 29px;
+  width: 29px;
+  border: 1px $soft-blue solid;
+  margin: 4px;
+  transition: all .2s ease;
+
+  &:hover {
+    background-color: $blue-primary;
+
+    i {
+      color: $white;
+    }
+  }
+
+  i {
+    font-size: 15px;
+    color: $light-blue-2;
+    margin-top: -10px!important;
+    margin-left: -7px!important;
+  }
+}
+
+.btn-secondary {
+  @include colorize($white, $blue-primary, $medium-gray, $blue-primary);
+}
+
+.btn-danger {
+  @include colorize($red, $white, $red, $white);
+}
+
+.btn-success {
+  @include colorize($green, $white, $green, $white);
+}
+
+.btn-warning {
+  @include colorize($gray, $white, $gray, $white);
+}
+
+.btn-info {
+  @include colorize($blue-info, $white, $blue-info, $white);
+}
+
+.btn-light {
+  @include colorize($white, $black, $medium-gray, $black);
+}
+
+.btn-dark {
+  @include colorize($blue-input, $white, $blue-input, $white);
+}
+
+.btn-tertiary {
+  background: #FFF;
+  border: 1px solid #4A74B3;
+  color: #4A74B3;
+  &:hover {
+      background: #F5F7FC;
+  }
+  &:active {
+      background: #DDE3F4;
+  }
+}
+
+.btn-white {
+  border: none !important;
+  @include colorize($white, $blue, $white, $blue);
+  &:hover {
+    background-color: lighten($blue-input, 70%);
+    border: none !important;
+  }
+}
+
+.btn-disabled {
+  @include colorize($light-gray, $gray, $light-gray, $gray);
+
+  &:hover {
+    //removes hover effect when the 'disabled' attribute is not present
+    background-color: $light-gray;
+  }
+}
+
+.btn-filter-left{
+  width: 100%;
+  margin-right: 6px;
+}
+
+.btn-filter-right{
+  width: 100%;
+  margin-left: 6px;
+}

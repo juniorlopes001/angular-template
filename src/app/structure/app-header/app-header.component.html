@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark" style="background-color: #172B4D">
+    <div>
+        <button id="menuIcon" class="btn btn-primary mr-1" type="button" (click)="openMenu()" style="background: #172B4D !Important;">
+      <i class="material-icons">menu</i>
+    </button>
+
+        <a class="navbar-brand" routerLink="/">
+            <div>
+                <h6 class="no-selected">Triasoftware - Angular</h6>
+                <sup class="beta no-selected">v 0.0.1</sup>
+            </div>
+        </a>
+    </div>
+
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <div class="dropdown">
+                <button class="btn btn-primary btn-dropdown" type="button" style="background-color: #172B4D" (click)="toogleDropdown()">
+          <img class="img-login" src="../../../assets/images/icon-perfil.jpg">
+          <span class="d-none d-sm-inline">{{ userName }}</span>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </button>
+                <div class="dropdown-menu" *ngIf="dropdownMenu" (click)="toogleDropdown()">
+                    <a class="dropdown-item" (click)="changePassword()">Change Password</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="/login" (click)="logout()">Logout</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div class="overlay-dropdown" *ngIf="dropdownMenu" (click)="toogleDropdown()"></div>
+<app-page-loader></app-page-loader>

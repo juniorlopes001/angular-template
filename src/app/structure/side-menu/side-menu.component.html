@@ -1,0 +1,23 @@
+<div class="sidebar thin-scroll-dark" [ngClass]="{'active': showMenu}">
+
+    <ul class="logo">
+        <li class="sidebar-header" (click)="closeMenu()">
+            <a (click)="home()">
+                <img style="height: 38px;width: auto;margin-left: 1em;margin-top: 0.5em;" src="../../../assets/images/logo.png" alt="Logo">
+                <i class="material-icons">keyboard_arrow_left</i>
+            </a>
+        </li>
+    </ul>
+
+
+    <ul class="space-bottom">
+        <li class="sidebar-header-init">
+            <div class="accordion-panel-init" (click)="openPage('/')">
+                <span class="space-label"><i class="material-icons">assessment</i></span>
+                <span class="description no-selected">Dashboard</span>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<div class=" menu-overlay" [ngClass]="{'active': showMenu}" (click)="closeMenu()"> </div>

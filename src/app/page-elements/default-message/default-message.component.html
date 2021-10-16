@@ -1,0 +1,14 @@
+<div class="toastr" [ngClass]="{ 
+  'show': showMessage}">
+  <div class="alert" [ngClass]="{ 
+    'alert-success': message.type === 'success', 
+    'alert-danger': message.type === 'error' 
+  }">
+    <i *ngIf="message.type === 'success'" class="icon material-icons">check_circle</i>
+    <i *ngIf="message.type === 'error'" class="icon material-icons">error</i>
+    {{messageDescription}}
+    <button class="close">
+      <i class="material-icons">close</i>
+    </button>
+  </div>
+</div>

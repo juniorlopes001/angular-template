@@ -1,0 +1,194 @@
+@import "../modules/colors";
+//Variables
+$header-height: 50px;
+$footer-height: 45px;
+//Structure/Layout
+body,
+html {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    font-family: "Roboto Regular", "Roboto", sans-serif;
+}
+
+main>* {
+    // display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+body.hide-scroll-bars {
+    overflow: hidden;
+}
+
+.hideScrollBars {
+    overflow: hidden;
+}
+
+.page-content-container {
+    // background-color: rgba(232, 235, 241, 1);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: $header-height;
+    min-height: $header-height;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+    /*same as 100. will take everything left as header and footer are not using flex-grow*/
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: $footer-height;
+}
+
+.component-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.page-container,
+.modal-header-failure-events,
+.modal-content-failure-events {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .05);
+    background-color: $white;
+}
+
+//ngx-treeview adjustment:
+//puts the itens a little to the right: only those without expand button
+ngx-treeview:not(.selected-list) {
+    div.form-check {
+        position: relative;
+        left: 30px;
+    }
+}
+
+i.collapse-expand+div.form-check {
+    position: relative;
+    left: 0;
+}
+
+.default-container {
+    background-color: $white;
+    padding: 0;
+    h1,
+    h2 {
+        padding: 20px 20px;
+        font-size: 16px;
+        color: $gray;
+        border-bottom: 1px solid $medium-gray;
+        margin: 0;
+        max-width: 100%;
+        font-weight: 400;
+        span {
+            color: $blue-input;
+            text-transform: uppercase;
+        }
+    }
+    h2 {
+        padding: 20px 0;
+        border-top: 1px solid $medium-gray;
+        border-bottom: 0;
+    }
+}
+
+.text-highlight {
+    font-weight: 700;
+    font-style: italic;
+}
+
+// tutorial style
+.hopscotch-bubble {
+    border-color: $blue-info !important;
+    font-style: normal !important;
+}
+
+.hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow-border {
+    border-bottom: 17px solid rgba(117, 170, 220, 1)!important;
+}
+
+.hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow-border {
+    border-top: 17px solid rgba(117, 170, 220, 1)!important;
+}
+
+.hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow-border {
+    border-right: 17px solid rgba(117, 170, 220, 1)!important;
+}
+
+.hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow-border {
+    border-left: 17px solid rgba(117, 170, 220, 1)!important;
+}
+
+.hopscotch-title {
+    font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto' !important;
+    font-size: 18px !important;
+    color: $blue-input !important;
+}
+
+.hopscotch-content {
+    font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto' !important;
+    font-size: 14px !important;
+    color: $gray-labels !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
+    padding-top: 15px!important;
+    padding-bottom: 10px!important;
+}
+
+.hopscotch-bubble-number {
+    background-image: none !important;
+    background-color: $blue-primary !important;
+    font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto';
+    font-weight: 700 !important;
+    font-style: normal;
+    font-size: 14px !important;
+    padding: 0px !important;
+    border-radius: 30px !important;
+}
+
+.hopscotch-nav-button {
+    font-size: 14px !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px !important;
+    outline: none;
+    padding: 8px 15px !important;
+    box-shadow: 0 1.5px 4px rgba(23, 43, 77, 0.24), 0 1.5px 6px rgba(23, 43, 77, 0.08);
+    font-family: 'Roboto-Medium', 'Roboto Medium', 'Roboto';
+    font-weight: 500 !important;
+    font-style: normal;
+    text-shadow: none !important;
+    height: inherit !important;
+    background-image: none!important;
+}
+
+.hopscotch-nav-button.next {
+    background-color: $blue-primary !important;
+    border-color: $blue-primary !important;
+}
+
+.hopscotch-nav-button.prev {
+    color: $blue-primary!important;
+    background: $white!important;
+    border-color: $white!important;
+}
